@@ -86,7 +86,8 @@ nums <- tokens_clean %>%
 tokens_clean <- tokens_clean %>% 
   anti_join(nums, by = "word")
 
-unique_stopwords <- data.frame(word = c("erm", "Yes", "yes", "and", "thing", "Thing", "day", "Day", "get", "Get", 
+unique_stopwords <- data.frame(word = c("erm", "err", "Err", "bugggy",
+                                        "Yes", "yes", "and", "thing", "Thing", "day", "Day", "get", "Get", 
                                         "interviewer", "P16", "p16", "emma", "bit",
                                         "something", "Something", "sometimes", "Sometimes", "can", 
                                         "Can", "And", "Yeah", "yeah", "Emma's", "emma's",
@@ -137,6 +138,187 @@ nrc_words %>%
   count %>%
   pull
 
+
+cloud <- tokens_clean %>%
+  inner_join(get_sentiments("bing"), by = "word")  %>%
+count(word, sentiment) %>% 
+  reshape2::acast(word~sentiment, 
+                  value.var = "n", 
+                  fill = 0) %>% 
+  comparison.cloud(scale=c(0.8,
+                           0.5),
+                   color = c("#1b2a49", "#00909e"),
+                   max.words = 100)
+cloud
+
+
+####
+stem <- tokens_clean %>%
+  mutate(stem = hunspell::hunspell_stem(word)) %>%
+  unnest(stem) %>%
+  count(stem, 
+        sort = TRUE)
+
+stem <- rename(stem, 
+       word = stem)
+
+# Graph of negative and positive sentiments
+negative_positive <- 
+  stem %>%
+  # add sentiment scores to words
+  left_join(get_sentiments("bing"), 
+            by = "word") %>%
+  arrange(sentiment)
+##
+
+# Graph of all sentiments
+negative_positive <-
+  stem %>%
+  # add sentiment scores to words
+  left_join(get_sentiments("afinn"),
+            by = "word") %>%
+  arrange(value) %>%
+  left_join(get_sentiments("bing"),
+            by = "word")
+
+##
+
+
+# PLOT of sentiments
+afinn_words <- tokens_clean %>%
+  inner_join(get_sentiments("afinn"), by = "word")
+
+bing_words <- tokens_clean %>%
+  inner_join(get_sentiments("bing"), 
+             by = "word") %>%
+  group_by(sentiment)
+
+##
+data <- 
+  bing_words %>%
+  #top_n(20) %>%
+  group_by(sentiment)  %>%
+  arrange(desc(n)) %>%
+  arrange(sentiment)%>%
+  ggplot(aes(reorder(word, n), 
+             n, 
+             fill=sentiment
+             )
+         ) +
+  geom_bar(stat="identity", 
+           show.legend = FALSE) +
+  
+  facet_wrap(~sentiment, 
+             scales="free_y") +
+  labs(y = "Contribution to sentiment", x = NULL) +
+  coord_flip()
+data
+
+######## postiive negative circle
+Words_sentiment_plot <- 
+  bing_words %>%
+  group_by(sentiment)  %>%
+  arrange(desc(n)) %>%
+  arrange(sentiment) %>%
+  ungroup() %>%
+  ggplot(aes(word, 
+             1, 
+             label = word, 
+             fill = sentiment,
+             colour = factor(sentiment),
+             alpha = n)) +
+  coord_polar(theta = "x") +
+  geom_point(size =2) +
+             #color = "transparent") +
+  scale_color_discrete(name = "sentiment")
+  
+Words_sentiment_plot
+
+
+
+##
+Words_sentiment_plot <- 
+  bing_words %>%
+  group_by(sentiment)  %>%
+  arrange(desc(n)) %>%
+  ungroup() %>%
+  ggplot(aes(word, 1, label = word, 
+             fill = sentiment,
+             alpha = n)) +
+  coord_polar(theta = "x") +
+  geom_point(color = "transparent") +
+  #geom_jitter() +
+  ggrepel::geom_label_repel(force = 1,
+                            nudge_y = 1.5,
+                            nudge_x = 2.5,
+                            direction = "both",
+                            box.padding = 0.04,
+                            segment.color = "transparent",
+                            size = 3) +
+  #facet_grid(~sentiment) +
+  theme(axis.text.y = element_blank(), axis.text.x = element_blank(),
+        axis.title.x = element_text(size = 6),
+        panel.grid = element_blank(), panel.background = element_blank(),
+        panel.border = element_rect("lightgray", fill = NA),
+        strip.text.x = element_text(size = 9)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Interview 1 sentiment towards EEFA12 diagnosis") +
+  coord_flip()
+Words_sentiment_plot
+##
+
+##
+Words_sentiment_plot <- 
+ # nrc_words %>%
+ # affin_words %>%
+  bing_words %>%
+  group_by(sentiment) %>%
+  count(word, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  #slice(seq_len(8)) %>% #consider top_n() from dplyr also
+  ungroup()
+
+Words_sentiment_plot  %>%
+  #Set `y = 1` to just plot one variable and use word as the label
+  ggplot(aes(word, 1, label = word, 
+             fill = sentiment,
+             alpha = n
+             )) +
+  #You want the words, not the points
+  geom_point(color = "transparent") +
+  #Make sure the labels don't overlap
+  ggrepel::geom_label_repel(force = 1,nudge_y = .7,  
+                   direction = "y",
+                   box.padding = 0.04,
+                   segment.color = "transparent",
+                   size = 3) +
+  facet_grid(~sentiment) +
+  #theme_lyrics() +
+  theme(axis.text.y = element_blank(), axis.text.x = element_blank(),
+        axis.title.x = element_text(size = 6),
+        panel.grid = element_blank(), panel.background = element_blank(),
+        panel.border = element_rect("lightgray", fill = NA),
+        strip.text.x = element_text(size = 9)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Interview 1 sentiment towards EEFA12 diagnosis") +
+  coord_flip()
+##
+
+
+negative_positive <- 
+  tokens_clean %>%
+  # add sentiment scores to words
+  left_join(get_sentiments("bing"), by = "word") %>%
+  # count number of negative and positive words
+  count(sentiment) %>%
+  spread(key = sentiment, value = n) %>%
+  ungroup %>%
+  # create centered score
+  mutate(sentiment = positive - negative - 
+           mean(positive - negative)) 
+
+==
+
 # visualise
 install.packages("ggridges")
 library(ggridges)
@@ -146,6 +328,16 @@ sentiment_test <- read.csv("sentiment_test.csv")
 sentiment_test  %>%
   count %>%
   pull
+
+
+
+
+
+
+
+
+
+
 
 sentiment_test$sentiment<- as.factor(sentiment_test$sentiment)
 
