@@ -218,40 +218,58 @@ library(scales)
 frequency <- read.csv("word_freq.csv")
 ggplot(frequency, 
        aes(x = proportion, y = Interview1, 
-                      color = abs(Interview1 - proportion)
+                      color = abs(sentiment)
+                      #color = abs(Interview1 - proportion)
                       )) +
   
   geom_abline(color = "gray40", lty = 2) +
-  
   geom_point(alpha = 0.2, 
-             size = 2.5) +
+             size = 2.0) +
   
   geom_jitter(alpha = 0.2, 
-              size = 2.5, 
+              size = 2.9, 
               width = 0.3, 
               height = 0.3) +
-  
   geom_text(aes(label = word), 
             #check_overlap = TRUE, 
             vjust = 2.5, 
             size = 2.8) +
-  
-  
   scale_x_log10(labels = percent_format()) +
   scale_y_log10(labels = percent_format()) +
   
-  scale_color_gradient(
-                      limits = c(0, 0.001), 
-                       low = "darkslategray4", 
-                       high = "gray75") +
+ # scale_color_gradient(
+                     # limits = c(0, 0.0005), 
+  #                     low = "darkslategray4", 
+  #                     high = "gray75") +
+  
+  #scale_colour_brewer(palette = "spectral") +
+  scale_colour_viridis_c(option = "rocket") + 
   
   facet_wrap(~author, 
              ncol=3
              #nrow=1
              ) +
-  theme(legend.position="none") +
-  labs(y = "Interview1", 
-       x = NULL)
+  theme_bw() +
+ # theme(legend.position="none") +
+  guides(colour=guide_legend(title="sentiment score")
+         ) + 
+  theme(
+    #legend.position=c(0.85, 0.3),
+    legend.title=element_text(size=10),
+    
+    axis.title.x = element_text(
+      size = 11,
+      face = "bold",
+      colour = "black"
+    ),
+    axis.title.y = element_text(
+      size = 11,
+      face = "bold",
+      colour = "black"
+    )
+  ) +
+  labs(y = "1 year since diagnosis", 
+       x = "Proportion")
 
 
 
