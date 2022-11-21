@@ -12,11 +12,11 @@ TEBC_DNAmCRP_github.Rproj
 # A non-exaustive list.
 # Common text files that may contain data #
 ###########################################
-*.[cC][sS][vV]
+#*.[cC][sS][vV]
 *.[tT][xX][tT]
 # Excel files (including macros and templates) #
 ################################################
-*.[xX][lL][sS][xXmMtT]?
+#*.[xX][lL][sS][xXmMtT]?
 # SPSS formats #
 ################
 *.[sS][aA][vV]
