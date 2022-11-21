@@ -1,0 +1,91 @@
+﻿beta,se,pvals,r2,model,type,category,predictor_var,,symptom
+-0.314446837,0.2122644,0.15408603,9.89E-02,SWLS,severity,medical,seizure_severity,,seizures
+-0.484401639,0.1956215,0.02233774,2.35E-01,SWLS,severity,medical,toileting_issues_severity,,incontinence
+-0.421458741,0.2027773,0.0507563,1.78E-01,SWLS,severity,medical,sleep_issues_severity,,sleep issues
+-0.18279174,0.2198394,0.41552064,3.34E-02,SWLS,severity,medical,gross_motor_control_severity,,gross motor control
+-0.174562796,0.2201735,0.43717477,3.05E-02,SWLS,severity,medical,fine_motor_control_severity,,fine motor control
+-0.275552352,0.2149501,0.21452685,7.59E-02,SWLS,severity,cognitive,speaking_severity,,verbal fluency (speaking)
+-0.338034336,0.2214663,0.54014745,1.91E-02,SWLS,severity,cognitive,verbal_comprehension_severity,,verbal comprehension (understanding others)
+-0.395411002,0.2053838,0.06854059,1.56E-01,SWLS,severity,cognitive,Learning_new_things_severity,,learning new things
+-0.163875901,0.2205838,0.46616831,2.69E-02,SWLS,severity,cognitive,Memory_severity,,memory
+-0.421870122,0.2027345,0.05050737,1.78E-01,SWLS,severity,cognitive,engagement_severity,,engagement
+-0.13375104,0.2215977,0.55291028,1.79E-02,SWLS,severity,behavioural,emotional_regulation_severity,,emotional regulation
+0.161209951,0.2206821,0.47355114,2.60E-02,SWLS,severity,behavioural,hyperactivity_severity,,hyperactivity
+-0.145077358,0.2212411,0.51946225,2.10E-02,SWLS,severity,behavioural,Self_injury_severity,,self injury
+-0.171114743,0.2203088,0.44642296,2.93E-02,SWLS,severity,behavioural,Aggression_severity,,aggression
+-0.28879471,0.2140791,0.19241046,8.34E-02,SWLS,severity,behavioural,Staying_focused_severity,,staying focused
+0.086623314,0.2227663,0.70149388,7.50E-03,EEF1A2 patient current age,severity,medical,seizure_severity,,seizures
+0.26771858,0.2154445,0.22837553,7.17E-02,EEF1A2 patient current age,severity,medical,toileting_issues_severity,,incontinence
+-0.044236211,0.2233879,0.84502505,1.96E-03,EEF1A2 patient current age,severity,medical,sleep_issues_severity,,sleep issues
+-0.388327195,0.2060585,0.07410848,1.51E-01,EEF1A2 patient current age,severity,medical,gross_motor_control_severity,,gross motor control
+-0.088133271,0.2227367,0.69652755,7.77E-03,EEF1A2 patient current age,severity,medical,fine_motor_control_severity,,fine motor control
+0.275311259,0.2149655,0.21494453,7.58E-02,EEF1A2 patient current age,severity,cognitive,speaking_severity,,verbal fluency (speaking)
+0.165303373,0.2205306,0.46223959,2.73E-02,EEF1A2 patient current age,severity,cognitive,verbal_comprehension_severity,,verbal comprehension (understanding others)
+0.15645586,0.2208531,0.48686242,2.45E-02,EEF1A2 patient current age,severity,cognitive,Learning_new_things_severity,,learning new things
+0.013663236,0.2235859,0.95187851,1.87E-04,EEF1A2 patient current age,severity,cognitive,Memory_severity,,memory
+0.280272763,0.2146447,0.20645767,7.86E-02,EEF1A2 patient current age,severity,cognitive,engagement_severity,,engagement
+0.343601819,0.2099926,0.11742616,1.18E-01,EEF1A2 patient current age,severity,behavioural,emotional_regulation_severity,,emotional regulation
+0.301896467,0.2131735,0.1721034,9.11E-02,EEF1A2 patient current age,severity,behavioural,hyperactivity_severity,,hyperactivity
+0.271664875,0.2151974,0.22132762,7.38E-02,EEF1A2 patient current age,severity,behavioural,Self_injury_severity,,self injury
+0.246191797,0.2167244,0.26939992,6.06E-02,EEF1A2 patient current age,severity,behavioural,Aggression_severity,,aggression
+0.06195065,0.2231773,0.78418011,3.84E-03,EEF1A2 patient current age,severity,behavioural,Staying_focused_severity,,staying focused
+-0.011904424,0.223591,0.95806734,1.42E-04,Age at diagnosis,severity,medical,seizure_severity,,seizures
+0.238385309,0.2171604,0.28535949,5.68E-02,Age at diagnosis,severity,medical,toileting_issues_severity,,incontinence
+-0.025689866,0.223533,0.90964938,6.60E-04,Age at diagnosis,severity,medical,sleep_issues_severity,,sleep issues
+-0.43612248,0.2012209,0.04245068,1.90E-01,Age at diagnosis,severity,medical,gross_motor_control_severity,,gross motor control
+-0.164909269,0.2205453,0.46332255,2.72E-02,Age at diagnosis,severity,medical,fine_motor_control_severity,,fine motor control
+0.229187226,0.2176549,0.30490435,5.25E-02,Age at diagnosis,severity,cognitive,speaking_severity,,verbal fluency (speaking)
+0.114694228,0.2221312,0.61128211,1.32E-02,Age at diagnosis,severity,cognitive,verbal_comprehension_severity,,verbal comprehension (understanding others)
+0.145358247,0.2212319,0.51864519,2.11E-02,Age at diagnosis,severity,cognitive,Learning_new_things_severity,,learning new things
+-0.018390392,0.223569,0.93525904,3.38E-04,Age at diagnosis,severity,cognitive,Memory_severity,,memory
+0.223615288,0.2179445,0.31713272,5.00E-02,Age at diagnosis,severity,cognitive,engagement_severity,,engagement
+0.345458612,0.2098402,0.11532769,1.19E-01,Age at diagnosis,severity,behavioural,emotional_regulation_severity,,emotional regulation
+0.282782313,0.2144801,0.20225168,8.00E-02,Age at diagnosis,severity,behavioural,hyperactivity_severity,,hyperactivity
+0.316253396,0.2121301,0.15160592,1.00E-01,Age at diagnosis,severity,behavioural,Self_injury_severity,,self injury
+0.286922031,0.214205,0.19544018,8.23E-02,Age at diagnosis,severity,behavioural,Aggression_severity,,aggression
+0.105709777,0.2223539,0.63964429,1.12E-02,Age at diagnosis,severity,behavioural,Staying_focused_severity,,staying focused
+-0.3201554,0.2118373,0.146345105,0.102499479,SWLS,impact,medical,seizure_impact,,seizures
+-0.48443118,0.1956178,0.022328359,0.234673568,SWLS,impact,medical,toileting_issues_impact,,incontinence
+-0.48252988,0.1958526,0.02293846,0.232835085,SWLS,impact,medical,sleep_issues_impact,,sleep issues
+-0.4984051,0.2069794,0.019192472,0.143190419,SWLS,impact,medical,gross_motor_control_impact,,gross motor control
+-0.46497532,0.2081818,0.049489041,0.133206988,SWLS,impact,medical,fine_motor_control_impact,,fine motor control
+-0.35901698,0.2086992,0.100821922,0.128893191,SWLS,impact,cognitive,speaking_impact,,verbal fluency (speaking)
+-0.63064404,0.173535,0.001652084,0.397711905,SWLS,impact,cognitive,verbal_comprehension_impact,,verbal comprehension (understanding others)
+-0.44218714,0.200558,0.039343032,0.195529465,SWLS,impact,cognitive,Learning_new_things_impact,,learning new things
+-0.3653008,0.2081532,0.094573994,0.133444676,SWLS,impact,cognitive,Memory_impact,,memory
+-0.52752626,0.1899626,0.011633314,0.278283959,SWLS,impact,cognitive,engagement_impact,,engagement
+-0.44602093,0.2097939,0.039114698,0.119730487,SWLS,impact,behavioural,emotional_regulation_impact,,emotional regulation
+0.04913697,0.2233367,0.828091216,0.002414441,SWLS,impact,behavioural,hyperactivity_impact,,hyperactivity
+-0.16314764,0.2206108,0.468179216,0.026617152,SWLS,impact,behavioural,Self_injury_impact,,self injury
+-0.31527573,0.2122029,0.152944588,0.099398787,SWLS,impact,behavioural,Aggression_impact,,aggression
+-0.41093042,0.2038549,0.057455298,0.168863809,SWLS,impact,behavioural,Staying_focused_impact,,staying focused
+-0.22005709,0.2181255,0.325094567,0.048425124,EEF1A2 patient current age,impact,medical,seizure_impact,,seizures
+0.30032197,0.2132846,0.174462131,0.090193287,EEF1A2 patient current age,impact,medical,toileting_issues_impact,,incontinence
+0.16608518,0.2205012,0.460095141,0.027584286,EEF1A2 patient current age,impact,medical,sleep_issues_impact,,sleep issues
+-0.20993607,0.2186237,0.348389657,0.044073155,EEF1A2 patient current age,impact,medical,gross_motor_control_impact,,gross motor control
+0.19626823,0.2192577,0.381354828,0.038521218,EEF1A2 patient current age,impact,medical,fine_motor_control_impact,,fine motor control
+0.18604434,0.2197029,0.407125832,0.034612495,EEF1A2 patient current age,impact,cognitive,speaking_impact,,verbal fluency (speaking)
+0.17035436,0.2203383,0.448476151,0.029020608,EEF1A2 patient current age,impact,cognitive,verbal_comprehension_impact,,verbal comprehension (understanding others)
+0.08113234,0.2228696,0.719652073,0.006582457,EEF1A2 patient current age,impact,cognitive,Learning_new_things_impact,,learning new things
+0.11203188,0.2221991,0.619633043,0.012551142,EEF1A2 patient current age,impact,cognitive,Memory_impact,,memory
+0.3239413,0.2115493,0.14136525,0.104937964,EEF1A2 patient current age,impact,cognitive,engagement_impact,,engagement
+0.22970655,0.2176275,0.303779546,0.052765098,EEF1A2 patient current age,impact,behavioural,emotional_regulation_impact,,emotional regulation
+0.30096525,0.2132393,0.173495766,0.090580084,EEF1A2 patient current age,impact,behavioural,hyperactivity_impact,,hyperactivity
+0.21081557,0.2185814,0.346327478,0.044443203,EEF1A2 patient current age,impact,behavioural,Self_injury_impact,,self injury
+0.31242865,0.2124133,0.156890139,0.097611664,EEF1A2 patient current age,impact,behavioural,Aggression_impact,,aggression
+0.2067263,0.2187766,0.355976628,0.042735761,EEF1A2 patient current age,impact,behavioural,Staying_focused_impact,,staying focused
+-0.25386001,0.2162817,0.254284801,0.064444903,Age at diagnosis,impact,medical,seizure_impact,,seizures
+0.32635418,0.2113638,0.138254795,0.106507051,Age at diagnosis,impact,medical,toileting_issues_impact,,incontinence
+0.17925246,0.2199851,0.424761512,0.032131446,Age at diagnosis,impact,medical,sleep_issues_impact,,sleep issues
+-0.4914249,0.2194717,0.039344592,0.036643493,Age at diagnosis,impact,medical,gross_motor_control_impact,,gross motor control
+0.21333943,0.218459,0.340449617,0.045513713,Age at diagnosis,impact,medical,fine_motor_control_impact,,fine motor control
+0.16353012,0.2205967,0.467122534,0.026742101,Age at diagnosis,impact,cognitive,speaking_impact,,verbal fluency (speaking)
+0.14137148,0.221361,0.530299139,0.019985894,Age at diagnosis,impact,cognitive,verbal_comprehension_impact,,verbal comprehension (understanding others)
+0.09960174,0.2224949,0.659210717,0.009920506,Age at diagnosis,impact,cognitive,Learning_new_things_impact,,learning new things
+0.1113618,0.2222159,0.621742073,0.012401451,Age at diagnosis,impact,cognitive,Memory_impact,,memory
+0.30743859,0.2127771,0.163976162,0.094518487,Age at diagnosis,impact,cognitive,engagement_impact,,engagement
+0.23858649,0.2171493,0.28494095,0.056923513,Age at diagnosis,impact,behavioural,emotional_regulation_impact,,emotional regulation
+0.30089748,0.2132441,0.173597397,0.090539296,Age at diagnosis,impact,behavioural,hyperactivity_impact,,hyperactivity
+0.27815194,0.2147826,0.210057507,0.077368503,Age at diagnosis,impact,behavioural,Self_injury_impact,,self injury
+0.34524628,0.2098577,0.115566273,0.119194991,Age at diagnosis,impact,behavioural,Aggression_impact,,aggression
+0.23993582,0.217075,0.282143689,0.057569199,Age at diagnosis,impact,behavioural,Staying_focused_impact,,staying focused
